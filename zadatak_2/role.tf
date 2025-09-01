@@ -17,16 +17,6 @@ resource "aws_iam_role" "hello_world_role" {
   assume_role_policy = data.aws_iam_policy_document.assume_role.json
 }
 
-data "aws_iam_policy_document" "lambda_assume" {
-  statement {
-    actions = ["sts:AssumeRole"]
-    principals {
-     type = "Service"
-     identifiers = ["lambda.amazonaws.com"]
-   }
-  }
-}
-
 resource "aws_iam_policy" "lambda_inline" {
   name = "${local.project}-lambda-policy"
   policy = data.aws_iam_policy_document.lambda_policy.json
