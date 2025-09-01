@@ -34,8 +34,3 @@ resource "aws_iam_role_policy_attachment" "attach" {
   role = aws_iam_role.hello_world_role.name
   policy_arn = aws_iam_policy.lambda_inline.arn
 }
-
-resource "aws_iam_role_policy_attachment" "lambda_logging" {
-  role       = aws_iam_role.hello_world_role.name
-  policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
-}
