@@ -24,11 +24,11 @@ for file in *; do
   G_dec=$((16#$G))
 
   if (( G_dec % 2 == 0 )); then
-    dir="${G}0/${file:6:1}0"
+    dir="${G}0/${file:7:1}0"
   else
     X=$((G_dec - 1))
     X_hex=$(printf "%x" $X)
-    dir="${X_hex}0/${file:6:1}0"
+    dir="${X_hex}0/${file:7:1}0"
   fi
 
   mkdir -p "$dir"
